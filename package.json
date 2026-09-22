@@ -1,7 +1,7 @@
 {
   "name": "beari",
   "productName": "BEARi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "BEARi — a living desktop AI companion",
   "main": "out/main/index.js",
   "private": true,
