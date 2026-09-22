@@ -225,6 +225,21 @@ export function installMockApi(): void {
       },
       onObserved: () => () => {}
     },
+    analytics: {
+      info: async () => ({
+        configured: true,
+        enabled: settings.shareUsage,
+        payload: {
+          installId: '8f3c1a90-7b2e-4d55-9c10-2ab6e5d41f77',
+          version: '1.0.0',
+          platform: 'win32',
+          os: '10.0.26200',
+          locale: 'en-GB',
+          firstSeen: new Date(Date.now() - 18 * 86400000).toISOString(),
+          daysUsed: 18
+        }
+      })
+    },
     update: {
       state: async () => update,
       check: async () => update,

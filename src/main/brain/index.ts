@@ -10,7 +10,11 @@ import type {
   Observation,
   RecallHit
 } from '@shared/types'
-import { openBrainDb } from './db'
+import { app } from 'electron'
+import { copyFileSync, existsSync, readdirSync, rmSync, statSync } from 'fs'
+import { dirname, join } from 'path'
+import { brainDbPath, checkpoint, openBrainDb } from './db'
+import type { DatabaseSync } from 'node:sqlite'
 import { BrainStore, USER_ID } from './store'
 import { BrainLlm } from './llm'
 import { extractFromExchange, reflect } from './learn'
@@ -22,10 +26,14 @@ import { extractFromExchange, reflect } from './learn'
  * The old flat notebook API (list/add/update/remove) is still served - each
  * entry is simply a fact about the user - so nothing that used it breaks.
  */
+/** How many pre-upgrade copies of her memory to keep. */
+const BACKUPS_KEPT = 3
+
 export class Brain {
   readonly store: BrainStore
   readonly llm: BrainLlm
   onChange: (() => void) | null = null
+  private db: DatabaseSync
   private queue: Promise<unknown> = Promise.resolve()
   private lastObservations: Observation[] = []
 
@@ -33,10 +41,53 @@ export class Brain {
     private getSettings: () => AppSettings,
     file?: string
   ) {
-    this.store = new BrainStore(openBrainDb(file))
+    this.db = openBrainDb(file)
+    this.store = new BrainStore(this.db)
     this.llm = new BrainLlm(getSettings)
+    this.guardUpgrade(file)
     this.store.ensureUser(getSettings().userName || 'User')
     this.lastObservations = this.recentObservations(30)
+  }
+
+  /**
+   * Her memory outlives the app: it sits in userData, which an installer never
+   * touches. The one real risk is a future version changing the schema badly,
+   * so the first time a new version opens an existing brain we put a dated copy
+   * beside it. Nothing is ever migrated destructively.
+   */
+  private guardUpgrade(file?: string): void {
+    let version = '0.0.0'
+    try {
+      version = app.getVersion()
+    } catch {
+      /* running outside Electron (tests) */
+    }
+    const seen = this.store.getMeta('appVersion')
+    this.store.setMeta('schemaVersion', this.store.getMeta('schemaVersion') ?? '1')
+    if (seen === version) return
+    if (seen) {
+      try {
+        const path = file ?? brainDbPath()
+        if (existsSync(path)) {
+          checkpoint(this.db)
+          const stamp = new Date().toISOString().slice(0, 10)
+          copyFileSync(path, join(dirname(path), `brain-backup-${seen}-${stamp}.sqlite`))
+          this.pruneBackups(dirname(path))
+          console.log(`[brain] kept a copy of her memory from v${seen} before running v${version}`)
+        }
+      } catch (err) {
+        console.log('[brain] could not back up before upgrade:', err instanceof Error ? err.message : err)
+      }
+    }
+    this.store.setMeta('appVersion', version)
+  }
+
+  private pruneBackups(dir: string): void {
+    const backups = readdirSync(dir)
+      .filter((f) => f.startsWith('brain-backup-') && f.endsWith('.sqlite'))
+      .map((f) => ({ f, at: statSync(join(dir, f)).mtimeMs }))
+      .sort((a, b) => b.at - a.at)
+    for (const old of backups.slice(BACKUPS_KEPT)) rmSync(join(dir, old.f), { force: true })
   }
 
   /** Keep the user entity's name in step with settings. */

@@ -297,6 +297,26 @@ export interface AppSettings {
   learnFromChat: boolean
   /** Check GitHub Releases for a newer BEARi on launch and every few hours. */
   autoCheckUpdates: boolean
+  /** Send the anonymous once-a-day hello described in AnalyticsInfo. */
+  shareUsage: boolean
+}
+
+/** Exactly what the once-a-day hello contains, shown to the user verbatim. */
+export interface AnalyticsPayload {
+  installId: string
+  version: string
+  platform: string
+  os: string
+  locale: string
+  firstSeen: string
+  daysUsed: number
+}
+
+export interface AnalyticsInfo {
+  /** False when this build was made without a collection endpoint - then nothing is ever sent. */
+  configured: boolean
+  enabled: boolean
+  payload: AnalyticsPayload
 }
 
 export const DEFAULT_AWARENESS: AwarenessSettings = {
@@ -326,7 +346,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   launchAtStartup: false,
   awareness: DEFAULT_AWARENESS,
   learnFromChat: true,
-  autoCheckUpdates: true
+  autoCheckUpdates: true,
+  shareUsage: true
 }
 
 // ---------------------------------------------------------------- IPC
@@ -365,6 +386,8 @@ export const IPC = {
   awarenessRecent: 'awareness:recent',
   awarenessChanged: 'awareness:changed',
   awarenessObserved: 'awareness:observed',
+  // analytics
+  analyticsInfo: 'analytics:info',
   // updates
   updateState: 'update:state',
   updateCheck: 'update:check',

@@ -1601,3 +1601,35 @@ input[type='range'] {
 .btn.ghost.danger:hover {
   background: var(--danger-soft);
 }
+
+.payload {
+  margin-top: 12px;
+  background: var(--lav-50);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.payload-head {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  margin-bottom: 8px;
+}
+
+.payload dl {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 4px 12px;
+  font-size: 12.5px;
+  font-family: 'Cascadia Mono', Consolas, monospace;
+}
+
+.payload dt {
+  color: var(--ink-3);
+}
+
+.payload dd {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}

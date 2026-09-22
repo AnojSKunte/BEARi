@@ -153,6 +153,43 @@ Two things worth knowing:
 
 ---
 
+## 📈 Knowing who uses her
+
+Two ways, and the first needs no setup at all:
+
+```powershell
+npm run stats
+```
+
+reads **GitHub**: how many times each release was downloaded, how many people
+looked at the repository in the last two weeks, stars and clones. Downloads are
+the honest floor — one download is at least one person who wanted her.
+
+To know how many copies are *still in use*, deploy the one-file endpoint in
+[`scripts/cloudflare-worker.js`](scripts/cloudflare-worker.js) (free, about five
+minutes, instructions at the top of the file) and put its URL in `package.json`:
+
+```json
+"beari": { "analyticsEndpoint": "https://beari-usage.you.workers.dev" }
+```
+
+Then `npm run stats` also shows active copies, versions in use, rough country
+and how long people have kept her.
+
+**What a copy of BEARi sends, once a day:** a random id made on that machine,
+the app version, the Windows version, the display language, the date it was
+first run, and how many days it has been used. That is the entire payload, and
+the app shows it verbatim in *Settings → Say hello to the developer*, with a
+switch to stop it. Never sent: anything she remembers, anything anyone types,
+anything she sees on screen, API keys, file names, or an IP address beyond the
+ordinary fact of making a request.
+
+**The endpoint is baked in at build time.** With none configured — the default,
+and how every build so far has shipped — the feature is inert: no timer, no
+request, and the Settings card does not appear.
+
+---
+
 ## 🧠 How her memory works
 
 `src/main/brain/` is a local SQLite database (Node's built-in driver, FTS5
@@ -181,6 +218,14 @@ days), plus a graph hop - anything the message names pulls in that entity's
 facts even when the words differ. The result is a compact block in her prompt.
 
 `npm run test:brain` exercises the store against a throwaway database.
+
+**Updates never touch it.** Her memory lives in `%APPDATA%\beari\data\`, which
+is a different place from the installed program, so installing a new version
+(or even uninstalling) leaves it alone — someone who has used her for weeks
+keeps every bit of it. The schema only ever adds tables, never drops them, and
+the first time a new version opens an existing brain it puts a dated copy next
+to it (`brain-backup-<version>-<date>.sqlite`, the last three kept) in case a
+future change ever goes wrong.
 
 ---
 
@@ -345,6 +390,7 @@ leaves your machine except the messages you send to your chosen AI provider.
 | `npm run test:brain` | Smoke-test her memory store |
 | `npm run setup:github` | Create the release repository and point the app at it |
 | `npm run release` | Bump, build, publish to GitHub Releases |
+| `npm run stats` | Who is downloading and using her |
 | `npm run preview:web` | Preview renderers in a plain browser |
 
 ---

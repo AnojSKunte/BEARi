@@ -111,16 +111,34 @@ CREATE TRIGGER IF NOT EXISTS insights_ad AFTER DELETE ON insights BEGIN
 END;
 `
 
+/**
+ * Where her memory lives: under Electron's userData, which is
+ * %APPDATA%\beari on Windows - a different place from the program files, so
+ * installing a new version (or even uninstalling) never touches it.
+ */
+export function brainDbPath(): string {
+  const dir = join(app.getPath('userData'), 'data')
+  mkdirSync(dir, { recursive: true })
+  return join(dir, 'brain.sqlite')
+}
+
 export function openBrainDb(file?: string): DatabaseSync {
-  let path = file
-  if (!path) {
-    const dir = join(app.getPath('userData'), 'data')
-    mkdirSync(dir, { recursive: true })
-    path = join(dir, 'brain.sqlite')
-  }
+  const path = file ?? brainDbPath()
   const db = new DatabaseSync(path)
   db.exec(SCHEMA)
   return db
+}
+
+/**
+ * Flush the write-ahead log into the database file, so a plain file copy of
+ * it is complete. Always do this before backing the file up.
+ */
+export function checkpoint(db: DatabaseSync): void {
+  try {
+    db.exec('PRAGMA wal_checkpoint(TRUNCATE)')
+  } catch {
+    /* a checkpoint failing is not worth interrupting anything for */
+  }
 }
 
 export const nowIso = (): string => new Date().toISOString()

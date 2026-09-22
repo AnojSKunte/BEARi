@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react'
 import type { JSX } from 'react'
-import type { AppSettings } from '@shared/types'
+import type { AnalyticsInfo, AppSettings } from '@shared/types'
 import { Icon } from '../Icon'
 
 function Toggle({
@@ -142,6 +143,8 @@ export function SettingsPage({
         </div>
       </div>
 
+      <UsageCard settings={settings} patch={patch} />
+
       <div className="card" style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
         <div className="notice-icon" style={{ background: 'var(--good-soft)', color: 'var(--good)' }}>
           <Icon name="shield" size={19} />
@@ -151,6 +154,70 @@ export function SettingsPage({
           machine except the messages (and, if you allow it, the small screen looks) sent to your chosen AI provider.
         </p>
       </div>
+    </div>
+  )
+}
+
+/**
+ * The anonymous once-a-day hello. Shows the exact payload rather than
+ * describing it, because “anonymous usage data” means nothing on its own.
+ */
+function UsageCard({
+  settings,
+  patch
+}: {
+  settings: AppSettings
+  patch: (p: Partial<AppSettings>) => void
+}): JSX.Element | null {
+  const [info, setInfo] = useState<AnalyticsInfo | null>(null)
+  useEffect(() => {
+    window.beari.analytics.info().then(setInfo)
+  }, [settings.shareUsage])
+
+  if (!info?.configured) return null
+  const p = info.payload
+
+  return (
+    <div className="card">
+      <h2>
+        <Icon name="heart" size={16} />
+        Say hello to the developer
+      </h2>
+      <div className="switch-row">
+        <div>
+          <div className="lab">Share anonymous usage</div>
+          <div className="desc">
+            Once a day BEARi sends the seven values below — nothing else, ever. It tells whoever made her how many
+            people are using her and which versions are out there.
+          </div>
+        </div>
+        <Toggle checked={settings.shareUsage} onChange={(v) => patch({ shareUsage: v })} />
+      </div>
+      <div className="payload">
+        <div className="payload-head">
+          {settings.shareUsage ? 'Exactly what is sent:' : 'Nothing is sent. This is what would be:'}
+        </div>
+        <dl>
+          <dt>installId</dt>
+          <dd>{p.installId}</dd>
+          <dt>version</dt>
+          <dd>{p.version}</dd>
+          <dt>platform</dt>
+          <dd>
+            {p.platform} {p.os}
+          </dd>
+          <dt>locale</dt>
+          <dd>{p.locale}</dd>
+          <dt>firstSeen</dt>
+          <dd>{p.firstSeen ? new Date(p.firstSeen).toLocaleDateString() : '—'}</dd>
+          <dt>daysUsed</dt>
+          <dd>{p.daysUsed}</dd>
+        </dl>
+      </div>
+      <p className="tiny" style={{ marginTop: 10 }}>
+        The id is a random number made on this computer and tied to nothing — not your name, your account or your
+        machine. Never sent: anything she remembers, anything you type, anything she sees on screen, your API keys.
+      </p>
     </div>
   )
 }

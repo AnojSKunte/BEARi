@@ -7,6 +7,7 @@ import { Brain } from './brain'
 import { ChatEngine } from './chat'
 import { ScreenObserver } from './awareness/observer'
 import { Updater } from './updater'
+import { Analytics } from './analytics'
 import { createCharacterWindow, createDashboardWindow } from './windows'
 import { createTray } from './tray'
 import type { TrayHandle } from './tray'
@@ -20,6 +21,7 @@ let brain: Brain
 let chat: ChatEngine
 let observer: ScreenObserver
 let updater: Updater
+let analytics: Analytics
 let tray: TrayHandle | null = null
 
 let characterWin: BrowserWindow | null = null
@@ -70,6 +72,7 @@ function createEngines(): void {
     broadcast(IPC.updateChanged, s)
     tray?.refresh()
   })
+  analytics = new Analytics(getSettings)
 }
 
 // ---------------------------------------------------------------- ipc
@@ -136,6 +139,13 @@ function registerIpc(): void {
     return observer.state()
   })
   ipcMain.handle(IPC.awarenessRecent, (_e, n: number) => brain.recentObservations(n))
+
+  // -- analytics
+  ipcMain.handle(IPC.analyticsInfo, () => ({
+    configured: analytics.configured,
+    enabled: settingsStore.get().shareUsage,
+    payload: analytics.payload()
+  }))
 
   // -- updates
   ipcMain.handle(IPC.updateState, () => updater.state)
@@ -218,7 +228,8 @@ if (!gotLock) {
       const report = (): void => {
         const u = updater.state
         smokeReport(
-          `[smoke] brain ok - ${stats.facts} facts, ${stats.episodes} episodes` +
+          `[smoke] v${app.getVersion()} | brain ${stats.facts} facts, ${stats.episodes} episodes, ${stats.entities} entities` +
+            ` | memory at ${app.getPath('userData')}` +
             ` | update: ${u.phase}${u.latestVersion ? ` latest=${u.latestVersion}` : ''}${u.message ? ` (${u.message})` : ''}` +
             ` | awareness ${observer.state().enabled ? 'on' : 'off'}`
         )
@@ -263,11 +274,13 @@ if (!gotLock) {
     startCursorLoop()
     observer.start()
     updater.start()
+    analytics.start()
   })
 
   app.on('before-quit', () => {
     observer?.stop()
     updater?.stop()
+    analytics?.stop()
   })
 
   // BEARi lives in the tray — closing the dashboard must not quit the app.

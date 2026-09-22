@@ -20,7 +20,8 @@
     "pack:portable": "npm run build && node scripts/pack-portable.mjs",
     "release": "node scripts/release.mjs",
     "test:brain": "tsx scripts/test-brain.ts",
-    "setup:github": "node scripts/setup-github.mjs"
+    "setup:github": "node scripts/setup-github.mjs",
+    "stats": "node scripts/stats.mjs"
   },
   "devDependencies": {
     "@pixi/unsafe-eval": "^6.5.10",
@@ -90,5 +91,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AnojSKunte/BEARi.git"
+  },
+  "beari": {
+    "analyticsEndpoint": ""
   }
 }

@@ -1,6 +1,7 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '@shared/types'
 import type {
+  AnalyticsInfo,
   AppInfo,
   AppSettings,
   AwarenessState,
@@ -71,6 +72,10 @@ const api = {
     recent: (n: number): Promise<Observation[]> => ipcRenderer.invoke(IPC.awarenessRecent, n),
     onChanged: (cb: (state: AwarenessState) => void) => subscribe(IPC.awarenessChanged, cb),
     onObserved: (cb: (o: Observation) => void) => subscribe(IPC.awarenessObserved, cb)
+  },
+  /** What the once-a-day anonymous hello contains, so it can be shown verbatim. */
+  analytics: {
+    info: (): Promise<AnalyticsInfo> => ipcRenderer.invoke(IPC.analyticsInfo)
   },
   update: {
     state: (): Promise<UpdateState> => ipcRenderer.invoke(IPC.updateState),
