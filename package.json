@@ -78,7 +78,7 @@
       {
         "provider": "github",
         "owner": "AnojSKunte",
-        "repo": "beari",
+        "repo": "BEARi",
         "releaseType": "release"
       }
     ],
@@ -89,6 +89,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnojSKunte/beari.git"
+    "url": "https://github.com/AnojSKunte/BEARi.git"
   }
 }

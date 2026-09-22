@@ -69,7 +69,8 @@ writeFileSync(PKG, JSON.stringify(pkg, null, 2) + '\n')
 console.log('✓ package.json now points releases at this repository')
 
 // ---- remote + push
-const git = (a, opts = {}) => execFileSync('git', a, { encoding: 'utf8', ...opts }).trim()
+// stdio:'inherit' makes execFileSync return null for stdout, so guard the trim.
+const git = (a, opts = {}) => (execFileSync('git', a, { encoding: 'utf8', ...opts }) ?? '').trim()
 const remotes = git(['remote']).split('\n').filter(Boolean)
 const url = `https://github.com/${slug}.git`
 if (remotes.includes('origin')) {
