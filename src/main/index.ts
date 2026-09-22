@@ -209,13 +209,29 @@ if (!gotLock) {
   app.whenReady().then(() => {
     createEngines()
     registerIpc()
-    // Headless start-up check for builds and CI: engines up, brain open, then leave.
-    // A GUI executable has no console, so the line is also written to the file
-    // named in BEARI_SMOKE when that looks like a path.
+    // Headless start-up check for builds and CI: engines up, brain open, one
+    // real update check against GitHub, then leave. A GUI executable has no
+    // console, so the line is also written to the file named in BEARI_SMOKE
+    // when that looks like a path.
     if (process.env.BEARI_SMOKE) {
       const stats = brain.store.stats()
-      smokeReport(`[smoke] brain ok - ${stats.facts} facts, ${stats.episodes} episodes; updater ${updater.state.phase}; awareness ${observer.state().enabled ? 'on' : 'off'}`)
-      setTimeout(() => app.quit(), 500)
+      const report = (): void => {
+        const u = updater.state
+        smokeReport(
+          `[smoke] brain ok - ${stats.facts} facts, ${stats.episodes} episodes` +
+            ` | update: ${u.phase}${u.latestVersion ? ` latest=${u.latestVersion}` : ''}${u.message ? ` (${u.message})` : ''}` +
+            ` | awareness ${observer.state().enabled ? 'on' : 'off'}`
+        )
+        app.quit()
+      }
+      const bail = setTimeout(report, 25_000)
+      updater.check(true).then(() => {
+        // the result arrives on an event just after the promise settles
+        setTimeout(() => {
+          clearTimeout(bail)
+          report()
+        }, 2500)
+      })
       return
     }
     applyLaunchAtStartup(settingsStore.get().launchAtStartup)
