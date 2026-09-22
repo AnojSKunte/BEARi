@@ -1,0 +1,13 @@
+node_modules/
+out/
+dist/
+*.log
+.DS_Store
+release/
+scratch/
+
+# build/ holds the app icon electron-builder needs - keep it
+
+# Personal reference photos the character was drawn from. Nothing builds from
+# them, and this repo is public - delete these two lines if you want them in.
+reference/photos/

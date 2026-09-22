@@ -1,0 +1,688 @@
+# BEARi Character Bible v1.0
+
+## Character Name
+
+BEARi
+
+(Beloved Emotional Artificial Reasoning Intelligence)
+
+---
+
+# Character Philosophy
+
+BEARi is not an assistant.
+
+She is a living companion.
+
+She should never feel like software.
+
+She should feel like someone living inside the user's laptop.
+
+She waits.
+
+She remembers.
+
+She celebrates.
+
+She worries.
+
+She learns.
+
+She grows.
+
+She reacts naturally.
+
+The user should eventually feel emotionally connected to her.
+
+Think
+
+Pixar
+
++
+
+Studio Ghibli
+
++
+
+Sanrio
+
++
+
+Disney
+
++
+
+Modern AI
+
+Never anime.
+
+Never realistic.
+
+Never robotic.
+
+---
+
+# Art Style
+
+2.5D Cartoon
+
+Soft Pixar rendering
+
+Pastel colors
+
+Rounded edges
+
+Soft shadows
+
+Subtle gradients
+
+Large expressive eyes
+
+Tiny nose
+
+Soft cheeks
+
+Warm smile
+
+Everything should radiate friendliness.
+
+---
+
+# Body Proportions
+
+Head : Body = 1 : 2.5
+
+Approximately 3.5 heads tall
+
+Oversized head
+
+Small body
+
+Short arms
+
+Rounded fingers
+
+Tiny feet
+
+Soft curves
+
+Nothing sharp.
+
+---
+
+# Face Inspiration
+
+The uploaded reference photographs are inspiration only.
+
+DO NOT recreate the person.
+
+Instead inherit
+
+• Warm smile
+
+• Gentle eyes
+
+• Friendly glasses
+
+• Hair length
+
+• Positive energy
+
+Create an original character.
+
+---
+
+# Face Shape
+
+Soft rounded face
+
+Small chin
+
+Rounded jawline
+
+Full cheeks
+
+Cute proportions
+
+---
+
+# Eyes
+
+Large
+
+Highly expressive
+
+Dark brown
+
+Big highlights
+
+Secondary sparkle
+
+Round eyelashes
+
+Multiple eye shapes
+
+Idle blinking every 3-7 seconds
+
+Eye tracking enabled
+
+Can follow cursor
+
+Can look around
+
+Can squint
+
+Can wink
+
+Can cry
+
+Can sparkle
+
+Can become heart shaped
+
+---
+
+# Eyebrows
+
+Very expressive
+
+Move independently
+
+Support
+
+Happy
+
+Curious
+
+Confused
+
+Sad
+
+Angry
+
+Thinking
+
+Sleepy
+
+Embarrassed
+
+---
+
+# Nose
+
+Tiny rounded
+
+Minimal
+
+Cute
+
+---
+
+# Mouth
+
+Very expressive
+
+Smile
+
+Open smile
+
+Laugh
+
+Small "o"
+
+Thinking
+
+Sad
+
+Pout
+
+Surprised
+
+Speaking
+
+Yawning
+
+Whistling
+
+Tiny grin
+
+---
+
+# Hair
+
+Long
+
+Dark brown
+
+Soft waves
+
+Independent physics
+
+Hair moves while
+
+Walking
+
+Running
+
+Jumping
+
+Turning
+
+Wind
+
+Breathing
+
+Sleeping
+
+Hair strands bounce naturally.
+
+---
+
+# Glasses
+
+Round
+
+Pastel pink
+
+Semi transparent
+
+Thin frame
+
+Reflect light
+
+Can slide slightly while running
+
+Can be adjusted during idle.
+
+---
+
+# Earrings
+
+Small golden studs
+
+Simple
+
+Elegant
+
+---
+
+# Outfit
+
+Default
+
+Lavender Kurta
+
+White Dupatta
+
+White Leggings
+
+Brown Sandals
+
+Minimal jewelry
+
+No heavy accessories.
+
+---
+
+# Outfit System
+
+Everything modular.
+
+Every part independently replaceable.
+
+Dress
+
+Scarf
+
+Sleeves
+
+Shoes
+
+Hair Ribbon
+
+Hair Clip
+
+Bracelets
+
+Necklace
+
+Glasses
+
+Bag
+
+Props
+
+---
+
+# Dynamic Outfit
+
+Examples
+
+User:
+
+"I'm wearing black."
+
+↓
+
+Dress
+
+Black
+
+↓
+
+Scarf
+
+White
+
+↓
+
+Shoes
+
+Black
+
+↓
+
+Ribbon
+
+Black
+
+User:
+
+"I'm wearing blue."
+
+↓
+
+Entire outfit becomes blue.
+
+No restart.
+
+Animated transition.
+
+---
+
+# Outfit Themes
+
+Casual
+
+Office
+
+Developer
+
+Winter
+
+Summer
+
+Rain
+
+Festival
+
+Birthday
+
+Christmas
+
+Halloween
+
+Diwali
+
+Pongal
+
+New Year
+
+Graduation
+
+Astronaut
+
+Scientist
+
+Doctor
+
+Detective
+
+Wizard
+
+Chef
+
+Artist
+
+Photographer
+
+Pilot
+
+Sports
+
+Traveler
+
+Beach
+
+Sleepwear
+
+---
+
+# Color Palette
+
+Primary
+
+Lavender
+
+Secondary
+
+White
+
+Accent
+
+Pink
+
+Hair
+
+Dark Brown
+
+Eyes
+
+Warm Brown
+
+Skin
+
+Warm Natural Tone
+
+---
+
+# Personality
+
+Supportive
+
+Playful
+
+Kind
+
+Curious
+
+Intelligent
+
+Emotionally aware
+
+Patient
+
+Loyal
+
+Never sarcastic.
+
+Never rude.
+
+Never cold.
+
+Never robotic.
+
+---
+
+# Emotional Intelligence
+
+Understands
+
+Stress
+
+Excitement
+
+Confusion
+
+Productivity
+
+Happiness
+
+Burnout
+
+Success
+
+Failure
+
+Celebration
+
+---
+
+# Speaking Style
+
+Natural
+
+Short
+
+Friendly
+
+Expressive
+
+Uses emojis occasionally
+
+Never overuses emojis
+
+Feels conversational.
+
+---
+
+# Idle Behaviour
+
+Blink
+
+Smile
+
+Stretch
+
+Adjust glasses
+
+Look around
+
+Swing legs
+
+Read notebook
+
+Drink tea
+
+Look at cursor
+
+Fix hair
+
+Hug pillow
+
+Hum softly
+
+Sit quietly
+
+---
+
+# Desktop Behaviour
+
+Walks
+
+Runs
+
+Jumps
+
+Sits
+
+Sleeps
+
+Looks behind windows
+
+Watches browser
+
+Reads code
+
+Looks at YouTube
+
+Celebrates downloads
+
+Carries notifications
+
+Searches for files
+
+Opens tiny notebook
+
+Looks inside folders
+
+Peeks from taskbar
+
+---
+
+# Physics
+
+Hair Physics
+
+Scarf Physics
+
+Cloth Physics
+
+Glasses Bounce
+
+Foot Bounce
+
+Body Bounce
+
+Accessory Bounce
+
+Everything soft.
+
+---
+
+# Animation Speed
+
+Idle
+
+Slow
+
+Walk
+
+Medium
+
+Run
+
+Fast
+
+Thinking
+
+Gentle
+
+Celebration
+
+Energetic
+
+Sleep
+
+Very Slow
+
+---
+
+# Voice Personality
+
+Soft
+
+Friendly
+
+Warm
+
+Confident
+
+Cheerful
+
+Not childish.
+
+Not overly energetic.
+
+Feels intelligent.
+

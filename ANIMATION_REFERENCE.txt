@@ -1,0 +1,337 @@
+# Animation Bible
+
+Every animation should transition naturally.
+
+Never snap.
+
+Everything has anticipation and follow-through.
+
+---
+
+## Idle
+
+Breathing
+
+Blink
+
+Hair movement
+
+Scarf movement
+
+Body sway
+
+Weight shift
+
+Smile
+
+Eye movement
+
+---
+
+## Cursor Interaction
+
+Look at cursor
+
+Follow cursor
+
+Wave
+
+Hide
+
+Peek
+
+Run away playfully
+
+Jump over cursor
+
+Hug cursor
+
+---
+
+## Thinking
+
+Finger on chin
+
+Look upward
+
+Floating particles
+
+Thought cloud
+
+Notebook appears
+
+Writes notes
+
+Search animation
+
+Smile when answer found
+
+---
+
+## Happy
+
+Smile
+
+Sparkles
+
+Small bounce
+
+Clap
+
+Jump
+
+Spin
+
+Hearts
+
+---
+
+## Celebration
+
+Confetti
+
+Fireworks
+
+Stars
+
+Jump
+
+Dance
+
+Victory pose
+
+---
+
+## Confused
+
+Tilt head
+
+Question marks
+
+Scratch head
+
+Birds circling
+
+Look around
+
+---
+
+## Coding
+
+Laptop appears
+
+Typing
+
+Coffee
+
+Focused eyes
+
+Notebook
+
+---
+
+## Reading
+
+Book
+
+Turn pages
+
+Highlight text
+
+Smile
+
+Bookmark
+
+---
+
+## Sleeping
+
+Moon
+
+Stars
+
+Blanket
+
+Pillow
+
+Zzz
+
+Slow breathing
+
+---
+
+## Angry (Cute)
+
+Steam
+
+Cross mark
+
+Hands on waist
+
+Pout
+
+---
+
+## Crying
+
+Small tears
+
+Rain cloud
+
+Sniff
+
+Wipe eyes
+
+Smile again
+
+---
+
+## Embarrassed
+
+Blush
+
+Hide face
+
+Look away
+
+Tiny smile
+
+---
+
+## Excited
+
+Wide eyes
+
+Sparkles
+
+Jump
+
+Spin
+
+Hands up
+
+---
+
+## Searching
+
+Magnifying glass
+
+Walk
+
+Look around
+
+Peek behind windows
+
+Find item
+
+Celebrate
+
+---
+
+## Notification
+
+Walk carrying envelope
+
+Bell
+
+Message bubble
+
+Present notification
+
+Wave
+
+Leave
+
+---
+
+## File Search
+
+Tiny folders appear
+
+She opens one
+
+Looks inside
+
+Finds document
+
+Returns smiling
+
+---
+
+## Memory Recall
+
+Magical notebook
+
+Pages flip
+
+Icons appear
+
+Documents
+
+People
+
+Projects
+
+Calendar
+
+Ideas
+
+Answer appears
+
+---
+
+## Goodbye
+
+Wave
+
+Smile
+
+Walk away
+
+Look back
+
+Disappear softly
+
+---
+
+## Particle Effects
+
+❤️ Hearts
+
+✨ Sparkles
+
+⭐ Stars
+
+🎉 Confetti
+
+🎵 Music Notes
+
+💭 Thought Bubble
+
+❓ Question Marks
+
+🐦 Birds
+
+☕ Coffee
+
+📚 Books
+
+💻 Laptop
+
+📄 Documents
+
+🌧 Rain Cloud
+
+🔥 Steam
+
+🌙 Moon
+
+🌸 Flower Petals
+
+🍃 Leaves
+
+❄ Snowflakes
+
+🎈 Balloons
+
+🪄 Magic Dust

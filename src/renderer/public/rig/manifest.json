@@ -1,0 +1,62 @@
+{
+  "design": {
+    "w": 316,
+    "h": 550
+  },
+  "parts": {
+    "arm-l": {
+      "file": "arm-l.png",
+      "x": 35,
+      "y": 300,
+      "w": 47,
+      "h": 123,
+      "pivotX": 68,
+      "pivotY": 308
+    },
+    "head": {
+      "file": "head.png",
+      "x": 45,
+      "y": 10,
+      "w": 219,
+      "h": 261,
+      "pivotX": 158,
+      "pivotY": 252
+    },
+    "hair-l": {
+      "file": "hair-l.png",
+      "x": 0,
+      "y": 24,
+      "w": 96,
+      "h": 314,
+      "pivotX": 58,
+      "pivotY": 80
+    },
+    "hair-r": {
+      "file": "hair-r.png",
+      "x": 222,
+      "y": 14,
+      "w": 94,
+      "h": 425,
+      "pivotX": 252,
+      "pivotY": 74
+    },
+    "body": {
+      "file": "body.png",
+      "x": 14,
+      "y": 0,
+      "w": 291,
+      "h": 550,
+      "pivotX": 158,
+      "pivotY": 545
+    },
+    "torso": {
+      "file": "torso.png",
+      "x": 14,
+      "y": 246,
+      "w": 291,
+      "h": 227,
+      "pivotX": 158,
+      "pivotY": 470
+    }
+  }
+}

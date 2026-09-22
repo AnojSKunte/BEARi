@@ -1,0 +1,176 @@
+{
+  "standH": 600,
+  "clips": {
+    "wave": {
+      "file": "./frames/wave.webp",
+      "view": "front",
+      "count": 6,
+      "cellW": 258,
+      "cellH": 622,
+      "anchorX": 147,
+      "anchorY": 616,
+      "lifts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "heights": [
+        598,
+        601,
+        603,
+        602,
+        601,
+        601
+      ]
+    },
+    "think": {
+      "file": "./frames/think.webp",
+      "view": "front",
+      "count": 4,
+      "cellW": 245,
+      "cellH": 636,
+      "anchorX": 126,
+      "anchorY": 630,
+      "lifts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "heights": [
+        597,
+        595,
+        593,
+        598
+      ]
+    },
+    "coffee": {
+      "file": "./frames/coffee.webp",
+      "view": "front",
+      "count": 6,
+      "cellW": 235,
+      "cellH": 616,
+      "anchorX": 120,
+      "anchorY": 610,
+      "lifts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "heights": [
+        594,
+        596,
+        594,
+        595,
+        597,
+        593
+      ]
+    },
+    "read": {
+      "file": "./frames/read.webp",
+      "view": "front",
+      "count": 6,
+      "cellW": 298,
+      "cellH": 614,
+      "anchorX": 154,
+      "anchorY": 608,
+      "lifts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "heights": [
+        595,
+        421,
+        397,
+        408,
+        395,
+        405
+      ]
+    },
+    "celebrate": {
+      "file": "./frames/celebrate.webp",
+      "view": "front",
+      "count": 6,
+      "cellW": 367,
+      "cellH": 757,
+      "anchorX": 170,
+      "anchorY": 751,
+      "lifts": [
+        0,
+        0,
+        148,
+        213,
+        0,
+        0
+      ],
+      "heights": [
+        596,
+        483,
+        500,
+        522,
+        479,
+        605
+      ]
+    },
+    "sleep": {
+      "file": "./frames/sleep.webp",
+      "view": "front",
+      "count": 4,
+      "cellW": 335,
+      "cellH": 613,
+      "anchorX": 163,
+      "anchorY": 607,
+      "lifts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "heights": [
+        591,
+        390,
+        391,
+        364
+      ]
+    },
+    "walk": {
+      "file": "./frames/walk.webp",
+      "view": "side",
+      "count": 8,
+      "cellW": 297,
+      "cellH": 643,
+      "anchorX": 140,
+      "anchorY": 637,
+      "lifts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "heights": [
+        603,
+        593,
+        601,
+        625,
+        601,
+        598,
+        594,
+        612
+      ]
+    }
+  }
+}

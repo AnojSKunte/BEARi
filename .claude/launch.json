@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "beari-web-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview:web"],
+      "port": 5199
+    }
+  ]
+}

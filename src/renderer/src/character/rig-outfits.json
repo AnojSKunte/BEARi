@@ -1,0 +1,578 @@
+{
+  "frock": {
+    "style": "frock",
+    "scale": 0.2999,
+    "pieces": {
+      "armL-upper": {
+        "file": "armL-upper.png",
+        "x": 65.02,
+        "y": 88.07,
+        "w": 29.39,
+        "h": 43.48
+      },
+      "armL-lower": {
+        "file": "armL-lower.png",
+        "x": 64.42,
+        "y": 130.35,
+        "w": 18.29,
+        "h": 28.19
+      },
+      "armR-upper": {
+        "file": "armR-upper.png",
+        "x": 127.69,
+        "y": 88.07,
+        "w": 28.19,
+        "h": 43.48
+      },
+      "armR-lower": {
+        "file": "armR-lower.png",
+        "x": 139.39,
+        "y": 130.35,
+        "w": 16.19,
+        "h": 28.19
+      },
+      "legL-thigh": {
+        "file": "legL-thigh.png",
+        "x": 89.31,
+        "y": 184.03,
+        "w": 19.79,
+        "h": 30.29
+      },
+      "legL-calf": {
+        "file": "legL-calf.png",
+        "x": 85.71,
+        "y": 213.11,
+        "w": 16.19,
+        "h": 28.19
+      },
+      "legR-thigh": {
+        "file": "legR-thigh.png",
+        "x": 108.2,
+        "y": 184.03,
+        "w": 22.79,
+        "h": 30.29
+      },
+      "legR-calf": {
+        "file": "legR-calf.png",
+        "x": 118.4,
+        "y": 213.11,
+        "w": 15.89,
+        "h": 28.19
+      },
+      "head": {
+        "file": "head.png",
+        "x": 77.91,
+        "y": 9.5,
+        "w": 65.07,
+        "h": 77.37
+      },
+      "torso": {
+        "file": "torso.png",
+        "x": 69.82,
+        "y": 85.37,
+        "w": 82.17,
+        "h": 99.86
+      },
+      "hair": {
+        "file": "hair.png",
+        "x": 62.92,
+        "y": 30.79,
+        "w": 94.76,
+        "h": 57.88
+      },
+      "hair-low": {
+        "file": "hair-low.png",
+        "x": 63.22,
+        "y": 87.47,
+        "w": 93.56,
+        "h": 33.89
+      }
+    },
+    "arms": {
+      "L": {
+        "shoulder": {
+          "x": 92.01,
+          "y": 95.86
+        },
+        "elbow": {
+          "x": 76.41,
+          "y": 129.45
+        },
+        "hand": {
+          "x": 72.22,
+          "y": 151.04
+        },
+        "shoulderColor": "#cf9bd9",
+        "elbowColor": "#eda36f",
+        "shoulderR": 9.02,
+        "elbowR": 3.72
+      },
+      "R": {
+        "shoulder": {
+          "x": 129.79,
+          "y": 95.86
+        },
+        "elbow": {
+          "x": 144.79,
+          "y": 129.45
+        },
+        "hand": {
+          "x": 148.98,
+          "y": 151.04
+        },
+        "shoulderColor": "#edbae8",
+        "elbowColor": "#f1ad7a",
+        "shoulderR": 8.83,
+        "elbowR": 3.6
+      }
+    },
+    "legs": {
+      "L": {
+        "hip": {
+          "x": 97.41,
+          "y": 185.82
+        },
+        "knee": {
+          "x": 97.41,
+          "y": 211.61
+        },
+        "hipColor": "#d4b9c2",
+        "kneeColor": "#f0e4e5",
+        "hipR": 5.46,
+        "kneeR": 5.04
+      },
+      "R": {
+        "hip": {
+          "x": 120.2,
+          "y": 185.82
+        },
+        "knee": {
+          "x": 120.2,
+          "y": 211.61
+        },
+        "hipColor": "#d0b8c3",
+        "kneeColor": "#e8dbe0",
+        "hipR": 5.77,
+        "kneeR": 5.33
+      }
+    },
+    "face": {
+      "eyeL": {
+        "x": 97.41,
+        "y": 58.68
+      },
+      "eyeR": {
+        "x": 122.29,
+        "y": 58.68
+      },
+      "mouth": {
+        "x": 109.7,
+        "y": 73.97
+      },
+      "blushL": {
+        "x": 90.21,
+        "y": 68.27
+      },
+      "blushR": {
+        "x": 129.79,
+        "y": 68.27
+      },
+      "eyeRx": 9,
+      "eyeRy": 9.9
+    },
+    "headPivot": {
+      "x": 110,
+      "y": 82.67
+    },
+    "hairPivot": {
+      "x": 110,
+      "y": 22.09
+    },
+    "hemY": 185.82,
+    "skin": "#ed844c"
+  },
+  "croptop": {
+    "style": "croptop",
+    "scale": 0.2961,
+    "pieces": {
+      "armL-upper": {
+        "file": "armL-upper.png",
+        "x": 66.77,
+        "y": 85.59,
+        "w": 18.95,
+        "h": 43.53
+      },
+      "armL-lower": {
+        "file": "armL-lower.png",
+        "x": 66.18,
+        "y": 125.26,
+        "w": 21.91,
+        "h": 31.98
+      },
+      "armR-upper": {
+        "file": "armR-upper.png",
+        "x": 137.24,
+        "y": 85.59,
+        "w": 17.47,
+        "h": 43.53
+      },
+      "armR-lower": {
+        "file": "armR-lower.png",
+        "x": 134.87,
+        "y": 125.26,
+        "w": 19.54,
+        "h": 31.98
+      },
+      "legL-thigh": {
+        "file": "legL-thigh.png",
+        "x": 86.31,
+        "y": 158.43,
+        "w": 22.8,
+        "h": 34.05
+      },
+      "legL-calf": {
+        "file": "legL-calf.png",
+        "x": 81.87,
+        "y": 191.29,
+        "w": 22.5,
+        "h": 55.07
+      },
+      "legR-thigh": {
+        "file": "legR-thigh.png",
+        "x": 111.48,
+        "y": 158.43,
+        "w": 23.1,
+        "h": 34.05
+      },
+      "legR-calf": {
+        "file": "legR-calf.png",
+        "x": 116.51,
+        "y": 191.29,
+        "w": 22.21,
+        "h": 55.07
+      },
+      "head": {
+        "file": "head.png",
+        "x": 75.36,
+        "y": 8.3,
+        "w": 68.4,
+        "h": 77.28
+      },
+      "torso": {
+        "file": "torso.png",
+        "x": 84.24,
+        "y": 84.4,
+        "w": 54.19,
+        "h": 75.21
+      },
+      "hair": {
+        "file": "hair.png",
+        "x": 63.81,
+        "y": 8.3,
+        "w": 92.68,
+        "h": 79.06
+      },
+      "hair-low": {
+        "file": "hair-low.png",
+        "x": 64.4,
+        "y": 86.18,
+        "w": 91.5,
+        "h": 30.2
+      }
+    },
+    "arms": {
+      "L": {
+        "shoulder": {
+          "x": 95.79,
+          "y": 93.28
+        },
+        "elbow": {
+          "x": 82.17,
+          "y": 127.04
+        },
+        "hand": {
+          "x": 73.88,
+          "y": 150.73
+        },
+        "shoulderColor": "#f696c4",
+        "elbowColor": "#fec797",
+        "shoulderR": 9.85,
+        "elbowR": 4.86
+      },
+      "R": {
+        "shoulder": {
+          "x": 126.58,
+          "y": 93.28
+        },
+        "elbow": {
+          "x": 139.61,
+          "y": 127.04
+        },
+        "hand": {
+          "x": 146.72,
+          "y": 150.73
+        },
+        "shoulderColor": "#f59bc0",
+        "elbowColor": "#fdc597",
+        "shoulderR": 9.48,
+        "elbowR": 4.74
+      }
+    },
+    "legs": {
+      "L": {
+        "hip": {
+          "x": 98.16,
+          "y": 157.83
+        },
+        "knee": {
+          "x": 98.16,
+          "y": 189.81
+        },
+        "hipColor": "#6987b2",
+        "kneeColor": "#466697",
+        "hipR": 6.77,
+        "kneeR": 6.25
+      },
+      "R": {
+        "hip": {
+          "x": 123.62,
+          "y": 157.83
+        },
+        "knee": {
+          "x": 123.62,
+          "y": 189.81
+        },
+        "hipColor": "#6685b0",
+        "kneeColor": "#4c6e9e",
+        "hipR": 6.77,
+        "kneeR": 6.25
+      }
+    },
+    "face": {
+      "eyeL": {
+        "x": 97.56,
+        "y": 56.86
+      },
+      "eyeR": {
+        "x": 121.84,
+        "y": 56.86
+      },
+      "mouth": {
+        "x": 109.7,
+        "y": 72.26
+      },
+      "blushL": {
+        "x": 89.87,
+        "y": 66.64
+      },
+      "blushR": {
+        "x": 130.13,
+        "y": 66.64
+      },
+      "eyeRx": 8.88,
+      "eyeRy": 9.77
+    },
+    "headPivot": {
+      "x": 110,
+      "y": 82.63
+    },
+    "hairPivot": {
+      "x": 110,
+      "y": 21.92
+    },
+    "hemY": 157.83,
+    "skin": "#ec8d57"
+  },
+  "hoodie": {
+    "style": "hoodie",
+    "scale": 0.2935,
+    "pieces": {
+      "armL-upper": {
+        "file": "armL-upper.png",
+        "x": 65.09,
+        "y": 97.54,
+        "w": 19.37,
+        "h": 32.29
+      },
+      "armL-lower": {
+        "file": "armL-lower.png",
+        "x": 64.8,
+        "y": 128.65,
+        "w": 19.96,
+        "h": 33.46
+      },
+      "armR-upper": {
+        "file": "armR-upper.png",
+        "x": 139.06,
+        "y": 93.72,
+        "w": 15.85,
+        "h": 36.1
+      },
+      "armR-lower": {
+        "file": "armR-lower.png",
+        "x": 139.65,
+        "y": 128.65,
+        "w": 14.38,
+        "h": 30.53
+      },
+      "legL-thigh": {
+        "file": "legL-thigh.png",
+        "x": 87.11,
+        "y": 166.51,
+        "w": 19.37,
+        "h": 30.23
+      },
+      "legL-calf": {
+        "file": "legL-calf.png",
+        "x": 81.82,
+        "y": 195.57,
+        "w": 20.55,
+        "h": 49.31
+      },
+      "legR-thigh": {
+        "file": "legR-thigh.png",
+        "x": 112.64,
+        "y": 166.51,
+        "w": 19.37,
+        "h": 30.23
+      },
+      "legR-calf": {
+        "file": "legR-calf.png",
+        "x": 116.75,
+        "y": 195.57,
+        "w": 20.55,
+        "h": 49.31
+      },
+      "head": {
+        "file": "head.png",
+        "x": 75.66,
+        "y": 8.31,
+        "w": 69.56,
+        "h": 77.19
+      },
+      "torso": {
+        "file": "torso.png",
+        "x": 82.41,
+        "y": 81.39,
+        "w": 58.7,
+        "h": 86.29
+      },
+      "hair": {
+        "file": "hair.png",
+        "x": 63.33,
+        "y": 8.31,
+        "w": 93.04,
+        "h": 78.96
+      },
+      "hair-low": {
+        "file": "hair-low.png",
+        "x": 63.92,
+        "y": 86.09,
+        "w": 91.28,
+        "h": 25.54
+      }
+    },
+    "arms": {
+      "L": {
+        "shoulder": {
+          "x": 86.52,
+          "y": 99.59
+        },
+        "elbow": {
+          "x": 77.13,
+          "y": 127.77
+        },
+        "hand": {
+          "x": 74.78,
+          "y": 154.77
+        },
+        "shoulderColor": "#dba6e0",
+        "elbowColor": "#deace3",
+        "shoulderR": 7.14,
+        "elbowR": 5.28
+      },
+      "R": {
+        "shoulder": {
+          "x": 137,
+          "y": 99.59
+        },
+        "elbow": {
+          "x": 145.81,
+          "y": 127.77
+        },
+        "hand": {
+          "x": 147.57,
+          "y": 154.77
+        },
+        "shoulderColor": "#d5aad3",
+        "elbowColor": "#e2b5e1",
+        "shoulderR": 7.33,
+        "elbowR": 5.05
+      }
+    },
+    "legs": {
+      "L": {
+        "hip": {
+          "x": 97.09,
+          "y": 166.51
+        },
+        "knee": {
+          "x": 97.09,
+          "y": 194.1
+        },
+        "hipColor": "#392e36",
+        "kneeColor": "#3a2f37",
+        "hipR": 6.56,
+        "kneeR": 6.06
+      },
+      "R": {
+        "hip": {
+          "x": 122.33,
+          "y": 166.51
+        },
+        "knee": {
+          "x": 122.33,
+          "y": 194.1
+        },
+        "hipColor": "#392f36",
+        "kneeColor": "#382e36",
+        "hipR": 6.56,
+        "kneeR": 6.06
+      }
+    },
+    "face": {
+      "eyeL": {
+        "x": 97.97,
+        "y": 56.44
+      },
+      "eyeR": {
+        "x": 121.74,
+        "y": 56.44
+      },
+      "mouth": {
+        "x": 109.71,
+        "y": 71.71
+      },
+      "blushL": {
+        "x": 90.04,
+        "y": 66.13
+      },
+      "blushR": {
+        "x": 129.96,
+        "y": 66.13
+      },
+      "eyeRx": 8.81,
+      "eyeRy": 9.69
+    },
+    "headPivot": {
+      "x": 110,
+      "y": 77.28
+    },
+    "hairPivot": {
+      "x": 110,
+      "y": 21.81
+    },
+    "hemY": 166.51,
+    "skin": "#ed8f5b"
+  }
+}
