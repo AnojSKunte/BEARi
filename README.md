@@ -118,25 +118,38 @@ file and quit — handy for checking a packaged exe on a machine you cannot see.
 ## 🚀 Releasing a new version (and how updates reach people)
 
 Installed copies of BEARi check **GitHub Releases** for a newer version when
-they start and every six hours, and show an *Update* button on Home and
-About (and in the tray menu). Publishing a release is one command:
+they start and every six hours, and show an *Update* button on Home and About
+(and in the tray menu). Nothing downloads until the person presses it.
+
+Set it up once, with the [GitHub CLI](https://cli.github.com) logged in:
 
 ```powershell
-# first time only: which GitHub repository releases live in (must be public)
-npm run release -- --repo YOURNAME/beari
+gh auth login          # once, opens your browser
+npm run setup:github   # creates the repo, points releases at it, pushes
+```
 
-# every release: a GitHub token with the "repo" scope, then
-$env:GH_TOKEN = "ghp_..."
-npm run release                    # patch: 1.0.0 -> 1.0.1
+Then every release is one command:
+
+```powershell
+npm run release -- current    # publish the current version as it stands
+npm run release               # patch: 1.0.0 -> 1.0.1
 npm run release -- minor --notes "Smoother walk, screen awareness"
-npm run release -- --dry           # build only, publish nothing
+npm run release -- --dry      # build only, publish nothing
 ```
 
 `scripts/release.mjs` bumps `package.json`, builds, uploads
 `BEARi-Setup-x.y.z.exe` + `latest.yml` + the blockmap to a release tagged
-`vx.y.z`, and commits/tags if this is a git checkout. The portable zip never
-updates itself (there is nothing to update against); share the installer
-when you want people to stay current.
+`vx.y.z`, then commits, tags and pushes. Credentials come from the GitHub
+CLI’s own login — no token is stored in the project, and none is ever printed.
+(`GH_TOKEN` is still honoured if you prefer to set one.)
+
+Two things worth knowing:
+
+- **The repository must be public** for other people’s copies to fetch updates;
+  a private one only works for you. `npm run setup:github -- --private` if you
+  want that anyway.
+- **The portable zip never updates itself** — there is nothing to update
+  against. Share the installer when you want people to stay current.
 
 ---
 
@@ -330,6 +343,7 @@ leaves your machine except the messages you send to your chosen AI provider.
 | `npm run frames` | Rebuild her animation strips from `reference/anim/` |
 | `npm run preview:frames` | Filmstrip of every action, timed by the real engine |
 | `npm run test:brain` | Smoke-test her memory store |
+| `npm run setup:github` | Create the release repository and point the app at it |
 | `npm run release` | Bump, build, publish to GitHub Releases |
 | `npm run preview:web` | Preview renderers in a plain browser |
 

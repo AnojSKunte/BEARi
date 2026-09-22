@@ -19,7 +19,8 @@
     "dist": "npm run build && electron-builder --win --publish never",
     "pack:portable": "npm run build && node scripts/pack-portable.mjs",
     "release": "node scripts/release.mjs",
-    "test:brain": "tsx scripts/test-brain.ts"
+    "test:brain": "tsx scripts/test-brain.ts",
+    "setup:github": "node scripts/setup-github.mjs"
   },
   "devDependencies": {
     "@pixi/unsafe-eval": "^6.5.10",
